@@ -1,3 +1,5 @@
+import pytest
+
 from Calculator import Calculator
 
 
@@ -19,3 +21,8 @@ def test_multiply():
 def test_divide():
     c = Calculator()
     assert c.divide(1, 2) == 0.5
+
+def test_type_error():
+    c = Calculator()
+    with pytest.raises(TypeError):
+        c.add(1, "2")
